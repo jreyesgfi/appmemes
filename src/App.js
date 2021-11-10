@@ -1,27 +1,47 @@
 import logo from './logo.svg';
+import {useState} from 'react';
 import './App.css';
 
 function App() {
 
-  var nombre = "Jorge";
+  const [linea1, setLinea1] = useState('Linea 1');
+  const [linea2, setLinea2] = useState('');
 
+  const onChangeLineas = function(valor) {
+    alert(valor);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        {nombre}
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      {// Selec picker
+      }
+      <select>
+        <option value= "./imagenes/azul_oscuro">Azul oscuro</option>
+        <option value= "azul_claro">Azul claro</option>
+        <option value= "amarillo">Amarillo</option>
+        <option value= "verde">Verde</option>
+        <option>Rojo</option>
+        <option>negro</option>
+      </select>  <br/>
+      {// Input text- Primer linea
+      }
+      <input type="text" onChange={onChangeLineas} placeholder = "Linea 1"/> <br/>
+
+      {// Input text- Segunda linea
+      }
+      <input type="text" placeholder = "Linea 2"/> <br/>
+
+      {// Botón exportar
+      }
+      <button>Exportar</button>
+
+      {/* Espacio para la foto */}
+      <div>
+        <span>{linea1}</span>
+        <span>{linea2}</span>
+        <img src= ""/>
+      </div>
+
     </div>
   );
 }
