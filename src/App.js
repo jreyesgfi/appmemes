@@ -7,8 +7,8 @@ function App() {
   const [linea1, setLinea1] = useState('Linea 1');
   const [linea2, setLinea2] = useState('');
 
-  const onChangeLineas = function(valor) {
-    alert(valor);
+  const onChangeLineas = function(event,setLinea) {
+    setLinea(event.target.value); {/*Modifica el valor de linea1 y renderiza el elemento html5*/}
   }
   return (
     <div className="App">
@@ -25,11 +25,11 @@ function App() {
       </select>  <br/>
       {// Input text- Primer linea
       }
-      <input type="text" onChange={onChangeLineas} placeholder = "Linea 1"/> <br/>
+      <input type="text" onChange={(event)=>onChangeLineas(event,setLinea1)} placeholder = "Linea 1"/> <br/>
 
       {// Input text- Segunda linea
       }
-      <input type="text" placeholder = "Linea 2"/> <br/>
+      <input type="text" onChange={(event)=>onChangeLineas(event,setLinea2)} placeholder = "Linea 2"/> <br/>
 
       {// Botón exportar
       }
@@ -37,8 +37,8 @@ function App() {
 
       {/* Espacio para la foto */}
       <div>
-        <span>{linea1}</span>
-        <span>{linea2}</span>
+        <span>{linea1}</span> <br/>
+        <span>{linea2}</span> <br/>
         <img src= ""/>
       </div>
 
