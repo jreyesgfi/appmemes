@@ -16,7 +16,7 @@ function App() {
 
       {// Selec picker
       }
-      <select onChange="">
+      <select onChange={(event)=>onChangeLineas(event,setImagen)}>
         <option value= "./imagenes/azul_oscuro">Azul oscuro</option>
         <option value= "azul_claro">Azul claro</option>
         <option value= "amarillo">Amarillo</option>
@@ -40,7 +40,7 @@ function App() {
       <div>
         <span>{linea1}</span> <br/>
         <span>{linea2}</span> <br/>
-        <img src= ""/>
+        <img src= {"/imagenes/" + imagen +".jpg"}/>
       </div>
 
     </div>
