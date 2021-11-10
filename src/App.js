@@ -6,6 +6,7 @@ function App() {
 
   const [linea1, setLinea1] = useState('Linea 1');
   const [linea2, setLinea2] = useState('');
+  const [imagen, setImagen] = useState('');
 
   const onChangeLineas = function(event,setLinea) {
     setLinea(event.target.value); {/*Modifica el valor de linea1 y renderiza el elemento html5*/}
@@ -15,7 +16,7 @@ function App() {
 
       {// Selec picker
       }
-      <select>
+      <select onChange="">
         <option value= "./imagenes/azul_oscuro">Azul oscuro</option>
         <option value= "azul_claro">Azul claro</option>
         <option value= "amarillo">Amarillo</option>
