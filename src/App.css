@@ -1,3 +1,5 @@
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +37,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.App input, .App select, button{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px 10px;
+  border:2px solid #666f80 ;
+  border-radius:7px;
+}
+
+.Wallpaper img {
+  margin-top: -15px;
+  width: 90%;
+  align-content: center;
+}
+
+.Wallpaper span{
+  display:inline-block;
+  Word-wrap: break-Word;
+  max-width: 60%;
+
+  
+  color:#666f80;
+
+  position:absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  
+}
+
+.App select{
+  margin-top: 10px;
+}
+
+#linea1 {
+  margin-top:10%;
+}
+#linea2 {
+  top: calc(59%);
 }

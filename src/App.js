@@ -5,8 +5,8 @@ import './App.css';
 function App() {
 
   const [linea1, setLinea1] = useState('Linea 1');
-  const [linea2, setLinea2] = useState('');
-  const [imagen, setImagen] = useState('');
+  const [linea2, setLinea2] = useState('Linea 2');
+  const [imagen, setImagen] = useState('negro');
 
   const onChangeLineas = function(event,setLinea) {
     setLinea(event.target.value); {/*Modifica el valor de linea1 y renderiza el elemento html5*/}
@@ -37,9 +37,9 @@ function App() {
       <button>Exportar</button>
 
       {/* Espacio para la foto */}
-      <div>
-        <span>{linea1}</span> <br/>
-        <span>{linea2}</span> <br/>
+      <div className= "Wallpaper">
+        <span id="linea1">{linea1}</span> <br/>
+        <span id="linea2">{linea2}</span> <br/>
         <img src= {"/imagenes/" + imagen +".jpg"}/>
       </div>
 
