@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import {useState} from 'react';
 import './App.css';
+import html2canvas from 'html2canvas';
 
 function App() {
 
@@ -11,6 +12,18 @@ function App() {
   const onChangeLineas = function(event,setLinea) {
     setLinea(event.target.value); {/*Modifica el valor de linea1 y renderiza el elemento html5*/}
   }
+
+  const onClickExportar = function(evento) {
+    html2canvas(document.querySelector("#Wallpaper")).then(canvas => {
+      var img = canvas.toDataURL("image/png");
+      var link = document.createElement('a');
+      link.download = 'wallpapergenerado.png';
+      link.href = img;
+      link.click();
+
+    });
+  }
+  
   return (
     <div className="App">
 
@@ -34,10 +47,10 @@ function App() {
 
       {// Botón exportar
       }
-      <button>Exportar</button>
+      <button onClick={onClickExportar}>Exportar</button>
 
       {/* Espacio para la foto */}
-      <div className= "Wallpaper">
+      <div className= "Wallpaper" id="Wallpaper">
         <span id="linea1">{linea1}</span> <br/>
         <span id="linea2">{linea2}</span> <br/>
         <img src= {"/imagenes/" + imagen +".jpg"}/>
